@@ -64,6 +64,8 @@
     <IntDir>debug\</IntDir>
     <TargetName>code</TargetName>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <IncludePath>C:\Program Files\MySQL\MySQL Server 8.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\MySQL\MySQL Server 8.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <QtInstall>msvc2019</QtInstall>
@@ -177,6 +179,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="calculate.cpp" />
+    <ClCompile Include="CMysql.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -198,12 +201,18 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CButton.qml" />
+    <None Include="CCustom.qml" />
+    <None Include="DropList.qml" />
     <None Include="main.qml" />
     <QtRcc Include="qml.qrc">
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="calculate.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CMysql.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

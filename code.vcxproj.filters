@@ -35,6 +35,9 @@
     <ClCompile Include="calculate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CMysql.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -45,6 +48,15 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CButton.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CCustom.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="DropList.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="main.qml">
       <Filter>Resource Files</Filter>
     </None>
@@ -56,5 +68,10 @@
     <QtMoc Include="calculate.h">
       <Filter>Source Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CMysql.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
