@@ -47,6 +47,17 @@ Window {
 			}
 		}
 
+		CButton {
+			id: mysql
+			implicitHeight: root.height * 0.1 
+			implicitWidth:  root.width * 0.2
+			name: calculate.getStr("database")
+
+			onClick: {
+				calculate.connectMysql();
+			}
+		}
+
 		CCustom {
 			id: b1
 			visible: true

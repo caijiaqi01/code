@@ -35,7 +35,7 @@
     <ClCompile Include="calculate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CMysql.cpp">
+    <ClCompile Include="CMysqlConnect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -70,7 +70,7 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CMysql.h">
+    <ClInclude Include="CMysqlConnect.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

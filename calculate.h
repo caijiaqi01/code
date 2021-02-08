@@ -47,6 +47,7 @@ public:
 	Q_INVOKABLE QString getStr(const QString& str);
 	Q_INVOKABLE void copyMasterPlusDevice(const QString& sourceDevide, const QString& toDevide);
 	Q_INVOKABLE void createPath();
+	Q_INVOKABLE void connectMysql(); //连接数据库
 
 signals:
 	void colorChanged(const QColor& color);

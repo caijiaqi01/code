@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QFile>
 #include <QTextCodec>
+#include "CMysqlConnect.h"
 
 Calculate::Calculate(QObject* parent)
 	: QObject(parent)
@@ -339,6 +340,14 @@ QString Calculate::getStr(const QString& str)
 	else if (str == "to Device") m_str = codec->toUnicode("目标设备:");
 	else if (str == "drop") m_str = codec->toUnicode("拖拽");
 	else if (str == "path") m_str = codec->toUnicode("路径");
+	else if (str == "database") m_str = codec->toUnicode("连接数据库");
 	return m_str;
+
+}
+
+void Calculate::connectMysql()
+{
+	CMysqlConnect m_mysql;
+	m_mysql.setSql();
 
 }
