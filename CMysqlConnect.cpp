@@ -16,12 +16,24 @@ CMysqlConnect::CMysqlConnect() {
 
 CMysqlConnect::~CMysqlConnect() {
 }
+/*
+//1 QString与int相互转换  
 
-int CMysqlConnect::setSql()
+QString qstr = QString::number(123);
+int i = atoi(qstr.toStdString().c_str());
+
+//也可以这样：  
+int i = atoi(qstr.ascii());
+
+//2 QString与string，即std::string  
+
+string s = qstr.toStdString();
+QString qstr2 = QString::fromStdString(s);
+*/
+
+int CMysqlConnect::setSql(QVariantList& output)
 {
-	cout << endl;
-	cout << "正在执行 SELECT sage from student where sno = '20081001197'" << endl;
-
+	output.clear();
 	try {
 		sql::Driver* driver;
 		sql::Connection* con;
@@ -42,6 +54,13 @@ int CMysqlConnect::setSql()
 			int id = res->getInt(1);
 			string name = res->getString(2);
 			int a = 0;
+
+			QString str = QString::number(res->getInt(1)) + "    " +  QString::fromStdString(res->getString(2)) +
+				"    " + QString::fromStdString(res->getString(3)) + "    " + QString::fromStdString(res->getString(4)) +
+				"    " + QString::number(res->getInt(5));
+			output.push_back(str);
+
+			if (output.size() > 100) break;
 
 		}
 		delete res;

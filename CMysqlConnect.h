@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <mysql.h>
+#include <QVector>
+#include <QString>
+#include <QVariantList>
 
 class CMysqlConnect
 {
@@ -9,7 +12,7 @@ public:
 	~CMysqlConnect();
 
 public:
-	int setSql();
+	int setSql(QVariantList& output);
 
 public:
 	

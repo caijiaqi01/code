@@ -4,5 +4,6 @@
 		<file>DropList.qml</file>
 		<file>CButton.qml</file>
 		<file>CCustom.qml</file>
+		<file>Output.qml</file>
     </qresource>
 </RCC>

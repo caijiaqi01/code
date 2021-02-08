@@ -348,6 +348,12 @@ QString Calculate::getStr(const QString& str)
 void Calculate::connectMysql()
 {
 	CMysqlConnect m_mysql;
-	m_mysql.setSql();
+	m_mysql.setSql(m_output);
 
+	emit outputChanged();
+}
+
+QVariantList Calculate::getOutput()
+{
+	return m_output;
 }

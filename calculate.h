@@ -1,12 +1,16 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QColor>
+#include <QVector>
+#include <QString>
+#include <QVariantList>
 class Calculate : public QObject
 {
 	Q_OBJECT
 		Q_ENUMS(GenerateAlgorithm)
 		Q_PROPERTY(QColor color READ color WRITE setColor NOTIFY colorChanged)
 		Q_PROPERTY(QColor timeColor READ timeColor)
+		Q_PROPERTY(QVariantList output READ getOutput NOTIFY outputChanged)
 
 public:
 	Calculate(QObject* parent = 0);
@@ -42,6 +46,8 @@ public:
 	bool changeCodeFile(const QString& filePath, ChangeCodeType changeType);
 	bool copyDevice(const QString& fromDir, bool coverFileIfExist, ChangeCodeType changeType);
 
+	QVariantList getOutput();
+
 	Q_INVOKABLE GenerateAlgorithm algorithm() const;
 	Q_INVOKABLE void setAlgorithm(GenerateAlgorithm algorithm);
 	Q_INVOKABLE QString getStr(const QString& str);
@@ -52,6 +58,7 @@ public:
 signals:
 	void colorChanged(const QColor& color);
 	void currentTime(const QString& strTime);
+	void outputChanged();
 
 public slots:
 	void start();
@@ -66,4 +73,5 @@ private:
 	int m_nColorTimer;
 	QString oldDevice = "CK55550";
 	QString newDevice = "CK53330";
+	QVariantList m_output;
 };
