@@ -1,1 +1,6 @@
-QML c++互相调用  https://blog.csdn.net/u012611644/article/details/89425204
+QML c++互相调用  
+https://blog.csdn.net/u012611644/article/details/89425204
+
+C++线程同步 
+https://www.cnblogs.com/jzincnblogs/p/5188051.html
+https://www.cnblogs.com/LyShark/p/13664972.html
