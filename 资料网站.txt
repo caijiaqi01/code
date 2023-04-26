@@ -1,1 +1,4 @@
 QML c++互相调用  https://blog.csdn.net/u012611644/article/details/89425204
+
+设计模式
+https://www.runoob.com/design-pattern/abstract-factory-pattern.html

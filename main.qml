@@ -10,16 +10,21 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
+	QtObject {
+		id: internal
+		readonly property var calculate: an.qt.Calculate
+	}
+
 	Rectangle {
         anchors.fill: parent
         color: "#54565c"
     }
-
+/*
 	Calculate {
-        id: calculate;
-        color: "green";
+        id: calculate
+        color: "green"
     }
-
+*/
 	RowLayout {
 		anchors.fill: parent
 		ColumnLayout {
@@ -30,7 +35,7 @@ Window {
 				id: drop
 				implicitHeight: root.height * 0.1 
 				implicitWidth:  root.width * 0.2
-				name: calculate.getStr("drop")
+				name: internal.calculate.getStr("drop")
 
 				onClick: {
 					mdrop.visible = true
@@ -41,10 +46,10 @@ Window {
 				id: path
 				implicitHeight: root.height * 0.1 
 				implicitWidth:  root.width * 0.2
-				name: calculate.getStr("path")
+				name: internal.calculate.getStr("path")
 
 				onClick: {
-					calculate.createPath();
+					internal.calculate.createPath();
 				}
 			}
 
@@ -52,10 +57,10 @@ Window {
 				id: mysql
 				implicitHeight: root.height * 0.1 
 				implicitWidth:  root.width * 0.2
-				name: calculate.getStr("database")
+				name: internal.calculate.getStr("database")
 
 				onClick: {
-					calculate.connectMysql();
+					internal.calculate.connectMysql();
 				}
 			}
 
@@ -68,7 +73,7 @@ Window {
 
 			RowLayout {
 				id: portRep
-				visible: false
+				visible: true
 				spacing: 5
 
 				CButton {
@@ -76,17 +81,17 @@ Window {
 					implicitHeight: root.height * 0.1 
 					implicitWidth:  root.width * 0.2
 					nameColor: (formDevice.text !== "" && toDevice.text !== "") ? "white" : "#5E5E5E"
-					name: calculate.getStr("copy device")
+					name: internal.calculate.getStr("copy device")
 
 					onClick: {
 						if (formDevice.text !== "" && toDevice.text !== ""){
-							calculate.copyMasterPlusDevice(formDevice.text, toDevice.text);
+							internal.calculate.copyMasterPlusDevice(formDevice.text, toDevice.text);
 						}
 					}
 				}
 
 				Text {
-					text: calculate.getStr("form Device")
+					text: internal.calculate.getStr("form Device")
 					font.pointSize: 16
 					color: "white"
 				}
@@ -106,6 +111,7 @@ Window {
 						color: "white"
 						activeFocusOnPress: true//Êó±êµ¥»÷¼¤»î
 						focus: true
+						validator: RegExpValidator{regExp: /^[4-9]|1[0-9]|2[0-9]|3[0-9]|4[0-8]$/}
 
 						onEditingFinished: {
 							if ( !focus ) return
@@ -117,7 +123,7 @@ Window {
 				}
 
 				Text {
-					text: calculate.getStr("to Device")
+					text: internal.calculate.getStr("to Device")
 					font.pointSize: 16
 					color: "white"
 				}
@@ -152,7 +158,7 @@ Window {
 		Output {
 			width: root.width / 2
 			height: root.height
-			output: calculate.output
+			output: internal.calculate.output
 		}
 	}
 	DropList {

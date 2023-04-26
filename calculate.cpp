@@ -4,8 +4,8 @@
 #include <QFile>
 #include <QDir>
 #include <QFile>
-#include <QTextCodec>
-#include "CMysqlConnect.h"
+//#include <QTextCodec>
+//#include "CMysqlConnect.h"
 
 Calculate::Calculate(QObject* parent)
 	: QObject(parent)
@@ -347,10 +347,10 @@ QString Calculate::getStr(const QString& str)
 
 void Calculate::connectMysql()
 {
-	CMysqlConnect m_mysql;
-	m_mysql.setSql(m_output);
+	//CMysqlConnect m_mysql;
+	//m_mysql.setSql(m_output);
 
-	emit outputChanged();
+	//emit outputChanged();
 }
 
 QVariantList Calculate::getOutput()
