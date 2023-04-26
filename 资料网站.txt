@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 QML c++互相调用  https://blog.csdn.net/u012611644/article/details/89425204
 
 设计模式
 https://www.runoob.com/design-pattern/abstract-factory-pattern.html
+=======
+QML c++互相调用  
+https://blog.csdn.net/u012611644/article/details/89425204
+
+C++线程同步 
+https://www.cnblogs.com/jzincnblogs/p/5188051.html
+https://www.cnblogs.com/LyShark/p/13664972.html
+>>>>>>> 5d684a79273936254b50b28d93d7e8543ea9cfae

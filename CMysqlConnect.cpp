@@ -53,7 +53,6 @@ int CMysqlConnect::setSql(QVariantList& output)
 			/* 通过数字偏移量, 1 代表第一列 */
 			int id = res->getInt(1);
 			string name = res->getString(2);
-			int a = 0;
 
 			QString str = QString::number(res->getInt(1)) + "    " +  QString::fromStdString(res->getString(2)) +
 				"    " + QString::fromStdString(res->getString(3)) + "    " + QString::fromStdString(res->getString(4)) +
